@@ -1,0 +1,509 @@
+export const initialCategories = [
+  { id: 'all', name: 'All Cuisines', icon: 'Utensils', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=300&q=80' },
+  { id: 'burgers', name: 'Burgers', icon: 'Sandwich', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&q=80' },
+  { id: 'pizza', name: 'Pizza', icon: 'Pizza', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=300&q=80' },
+  { id: 'sushi', name: 'Sushi & Japanese', icon: 'Fish', image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=300&q=80' },
+  { id: 'mexican', name: 'Mexican & Tacos', icon: 'Flame', image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=300&q=80' },
+  { id: 'healthy', name: 'Salads & Bowls', icon: 'Salad', image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&q=80' },
+  { id: 'indian', name: 'Indian Curry', icon: 'Soup', image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=300&q=80' },
+  { id: 'asian', name: 'Asian & Noodles', icon: 'CookingPot', image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=300&q=80' },
+  { id: 'desserts', name: 'Desserts & Sweets', icon: 'Cake', image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=300&q=80' },
+  { id: 'drinks', name: 'Beverages & Coffee', icon: 'Coffee', image: 'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=300&q=80' }
+];
+
+export const initialRestaurants = [
+  {
+    id: 'rest-1',
+    name: 'The Burger Foundry & Craft Bar',
+    slug: 'the-burger-foundry',
+    cuisine: 'burgers',
+    cuisineTags: ['Gourmet Burgers', 'American', 'Fries & Shakes'],
+    rating: 4.8,
+    reviewCount: 1420,
+    deliveryTimeMinutes: '20 - 30',
+    deliveryFee: 1.99,
+    minOrder: 12.00,
+    priceRange: '$$',
+    featured: true,
+    isOpen: true,
+    address: '458 Market St, Downtown',
+    phone: '+1 (555) 234-9871',
+    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80',
+    logo: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=150&q=80',
+    offer: 'Spend $25, save $5',
+    description: 'Artisanal smash burgers with dry-aged Angus beef, handcrafted brioche buns, and house-made truffle aioli.',
+    categories: ['Popular', 'Burgers', 'Loaded Sides', 'Shakes & Drinks'],
+    menu: [
+      {
+        id: 'item-101',
+        name: 'The Foundry Smash Supreme',
+        description: 'Double Angus beef patties, aged cheddar, caramelized bourbon onions, smoky bacon jam, and secret truffle sauce on toasted brioche.',
+        price: 15.99,
+        image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500&q=80',
+        category: 'Burgers',
+        isPopular: true,
+        isVegetarian: false,
+        isSpicy: false,
+        calories: 840,
+        options: [
+          { name: 'Patty Size', required: true, choices: [{ label: 'Double Patty', price: 0 }, { label: 'Triple Patty', price: 3.50 }] },
+          { name: 'Cheese Choice', required: false, choices: [{ label: 'Aged Cheddar', price: 0 }, { label: 'Swiss', price: 0.50 }, { label: 'Pepper Jack', price: 0.50 }] },
+          { name: 'Add-ons', required: false, multi: true, choices: [{ label: 'Applewood Smoked Bacon', price: 2.00 }, { label: 'Avocado Slices', price: 1.75 }, { label: 'Fried Egg', price: 1.50 }, { label: 'Pickled Jalapeños', price: 0.75 }] }
+        ]
+      },
+      {
+        id: 'item-102',
+        name: 'Crispy Truffle Chicken Burger',
+        description: 'Buttermilk fried chicken breast, shaved cabbage slaw, sweet pickle chips, and black truffle mayo.',
+        price: 14.50,
+        image: 'https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=500&q=80',
+        category: 'Burgers',
+        isPopular: true,
+        isVegetarian: false,
+        isSpicy: false,
+        calories: 720,
+        options: [
+          { name: 'Heat Level', required: true, choices: [{ label: 'Mild Truffle', price: 0 }, { label: 'Nashville Hot', price: 0.50 }] },
+          { name: 'Add Extra Sauce', required: false, multi: true, choices: [{ label: 'Truffle Mayo Dip', price: 1.25 }, { label: 'Ranch', price: 0.75 }] }
+        ]
+      },
+      {
+        id: 'item-103',
+        name: 'Smoked BBQ Bacon Stack',
+        description: 'Grilled beef patty, thick cut bacon, crispy fried onion straws, hickory BBQ sauce, and Monterey Jack cheese.',
+        price: 16.25,
+        image: 'https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=500&q=80',
+        category: 'Burgers',
+        isPopular: false,
+        isVegetarian: false,
+        isSpicy: false,
+        calories: 890,
+        options: [
+          { name: 'Bacon Style', required: false, choices: [{ label: 'Standard Crispy', price: 0 }, { label: 'Extra Glazed Bacon', price: 1.50 }] }
+        ]
+      },
+      {
+        id: 'item-104',
+        name: 'Parmesan Herb Garlic Fries',
+        description: 'Hand-cut russet potatoes tossed with fresh rosemary, roasted garlic oil, and freshly grated 24-month Parmigiano Reggiano.',
+        price: 6.99,
+        image: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?w=500&q=80',
+        category: 'Loaded Sides',
+        isPopular: true,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 420,
+        options: [
+          { name: 'Dipping Sauce', required: false, multi: true, choices: [{ label: 'Truffle Aioli', price: 1.25 }, { label: 'Chipotle Dip', price: 1.00 }] }
+        ]
+      },
+      {
+        id: 'item-105',
+        name: 'Salted Caramel Pretzel Shake',
+        description: 'Thick churned vanilla bean custard, crunchy salted pretzel crumbs, and dulce de leche swirl.',
+        price: 7.50,
+        image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&q=80',
+        category: 'Shakes & Drinks',
+        isPopular: true,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 580,
+        options: []
+      }
+    ]
+  },
+  {
+    id: 'rest-2',
+    name: 'Bella Napoli Woodfired Pizzeria',
+    slug: 'bella-napoli-pizzeria',
+    cuisine: 'pizza',
+    cuisineTags: ['Authentic Neapolitan', 'Italian', 'Woodfired'],
+    rating: 4.9,
+    reviewCount: 2180,
+    deliveryTimeMinutes: '25 - 35',
+    deliveryFee: 0.00,
+    minOrder: 15.00,
+    priceRange: '$$',
+    featured: true,
+    isOpen: true,
+    address: '120 Italian Quarter Way',
+    phone: '+1 (555) 789-0123',
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80',
+    logo: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=150&q=80',
+    offer: 'Free Delivery on all orders',
+    description: 'Traditional 48-hour fermented sourdough pizza baked at 900°F in our imported stone oven from Naples.',
+    categories: ['Popular', 'Pizzas', 'Antipasti & Salads', 'Dolci & Drinks'],
+    menu: [
+      {
+        id: 'item-201',
+        name: 'Margherita D.O.P.',
+        description: 'San Marzano tomatoes, fresh Fior di Latte mozzarella, fragrant sweet basil, and cold-pressed extra virgin olive oil.',
+        price: 17.50,
+        image: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=500&q=80',
+        category: 'Pizzas',
+        isPopular: true,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 780,
+        options: [
+          { name: 'Crust Style', required: true, choices: [{ label: 'Classic Neapolitan', price: 0 }, { label: 'Extra Thin & Crispy', price: 0 }, { label: 'Gluten-Free Crust', price: 3.00 }] },
+          { name: 'Toppings', required: false, multi: true, choices: [{ label: 'Buffalo Mozzarella upgrade', price: 2.50 }, { label: 'Fresh Arugula', price: 1.50 }, { label: 'Hot Honey Drizzle', price: 1.25 }] }
+        ]
+      },
+      {
+        id: 'item-202',
+        name: 'Diavola & Hot Honey',
+        description: 'Spicy Calabrian soppressata, crushed chili oil, smoked provolone, tomato passata, and organic wildflower hot honey.',
+        price: 20.00,
+        image: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=500&q=80',
+        category: 'Pizzas',
+        isPopular: true,
+        isVegetarian: false,
+        isSpicy: true,
+        calories: 890,
+        options: [
+          { name: 'Spice Level', required: false, choices: [{ label: 'Standard Spicy', price: 0 }, { label: 'Extra Inferno Hot', price: 0.50 }] }
+        ]
+      },
+      {
+        id: 'item-203',
+        name: 'Tartufo & Wild Mushroom',
+        description: 'Roasted cremini, shiitake and oyster mushrooms, garlic cream sauce, fior di latte, and white truffle oil drizzle.',
+        price: 21.50,
+        image: 'https://images.unsplash.com/photo-1573821663912-569905455b1c?w=500&q=80',
+        category: 'Pizzas',
+        isPopular: true,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 830,
+        options: []
+      },
+      {
+        id: 'item-204',
+        name: 'Classic Venetian Tiramisu',
+        description: 'Espresso-soaked ladyfingers layered with velvety mascarpone cream and dusted with Valrhona cocoa powder.',
+        price: 8.50,
+        image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=500&q=80',
+        category: 'Dolci & Drinks',
+        isPopular: true,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 450,
+        options: []
+      }
+    ]
+  },
+  {
+    id: 'rest-3',
+    name: 'Sakura Omakase & Ramen Bar',
+    slug: 'sakura-omakase-ramen',
+    cuisine: 'sushi',
+    cuisineTags: ['Japanese', 'Fresh Sashimi', 'Rich Tonkotsu Ramen'],
+    rating: 4.9,
+    reviewCount: 3100,
+    deliveryTimeMinutes: '30 - 40',
+    deliveryFee: 2.49,
+    minOrder: 20.00,
+    priceRange: '$$$',
+    featured: true,
+    isOpen: true,
+    address: '890 Cherry Blossom Blvd',
+    phone: '+1 (555) 432-8765',
+    image: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=800&q=80',
+    logo: 'https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=150&q=80',
+    offer: '10% off orders over $40',
+    description: 'Master chef curated nigiri, hand rolls, and 18-hour simmered pork broth tonkotsu ramen with handmade wheat noodles.',
+    categories: ['Popular', 'Sushi Rolls & Nigiri', 'Ramen', 'Appetizers'],
+    menu: [
+      {
+        id: 'item-301',
+        name: 'Dragon Roll Supreme (8 pcs)',
+        description: 'Tempura shrimp, cucumber, topped with thin slices of ripe avocado, glazed freshwater eel, tobiko, and unagi glaze.',
+        price: 18.99,
+        image: 'https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=500&q=80',
+        category: 'Sushi Rolls & Nigiri',
+        isPopular: true,
+        isVegetarian: false,
+        isSpicy: false,
+        calories: 520,
+        options: [
+          { name: 'Wasabi & Ginger', required: false, choices: [{ label: 'Normal Wasabi & Ginger', price: 0 }, { label: 'Extra Wasabi on side', price: 0.50 }] }
+        ]
+      },
+      {
+        id: 'item-302',
+        name: 'Signature 18-Hour Tonkotsu Ramen',
+        description: 'Rich creamy pork bone broth, tender slow-braised chashu pork belly, soft-boiled marinated ajitsuke egg, wood ear mushroom, and scallions.',
+        price: 17.50,
+        image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=500&q=80',
+        category: 'Ramen',
+        isPopular: true,
+        isVegetarian: false,
+        isSpicy: false,
+        calories: 680,
+        options: [
+          { name: 'Noodle Firmness', required: true, choices: [{ label: 'Normal Firm', price: 0 }, { label: 'Extra Firm (Katame)', price: 0 }, { label: 'Soft', price: 0 }] },
+          { name: 'Add Extra Toppings', required: false, multi: true, choices: [{ label: 'Extra Chashu (2 slices)', price: 3.50 }, { label: 'Extra Ajitsuke Nitamago Egg', price: 2.00 }, { label: 'Black Garlic Mayu Oil', price: 1.50 }, { label: 'Spicy Chili Paste Bomb', price: 1.00 }] }
+        ]
+      },
+      {
+        id: 'item-303',
+        name: 'Spicy Tuna Crispy Rice (4 pcs)',
+        description: 'Golden pan-crisped sushi rice cubes topped with spicy diced bluefin tuna, serrano pepper slice, and sweet soy reduction.',
+        price: 14.50,
+        image: 'https://images.unsplash.com/photo-1553621042-f6e147245754?w=500&q=80',
+        category: 'Appetizers',
+        isPopular: true,
+        isVegetarian: false,
+        isSpicy: true,
+        calories: 380,
+        options: []
+      }
+    ]
+  },
+  {
+    id: 'rest-4',
+    name: 'Taqueria El Fuego & Cantina',
+    slug: 'taqueria-el-fuego',
+    cuisine: 'mexican',
+    cuisineTags: ['Mexican Street Tacos', 'Burritos', 'Fresh Guacamole'],
+    rating: 4.7,
+    reviewCount: 980,
+    deliveryTimeMinutes: '15 - 25',
+    deliveryFee: 1.49,
+    minOrder: 10.00,
+    priceRange: '$',
+    featured: false,
+    isOpen: true,
+    address: '312 Mission Street',
+    phone: '+1 (555) 901-2345',
+    image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&q=80',
+    logo: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=150&q=80',
+    offer: 'Free Chips & Salsa over $20',
+    description: 'Juicy birria tacos with savory consommé for dipping, citrus-marinated carne asada, and freshly mashed hass avocado.',
+    categories: ['Popular', 'Street Tacos', 'Burritos & Bowls', 'Sides & Drinks'],
+    menu: [
+      {
+        id: 'item-401',
+        name: 'Crispy Birria Quesa-Tacos (3 pcs)',
+        description: 'Slow-braised beef brisket stuffed in corn tortillas dipped in chili oil, melted Oaxaca cheese, cilantro, onion, and hot rich dipping consommé broth.',
+        price: 16.99,
+        image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=500&q=80',
+        category: 'Street Tacos',
+        isPopular: true,
+        isVegetarian: false,
+        isSpicy: true,
+        calories: 740,
+        options: [
+          { name: 'Salsa Choice', required: true, choices: [{ label: 'Mild Verde Salsa', price: 0 }, { label: 'Smoky Chipotle Red Salsa', price: 0 }, { label: 'Habanero Fire', price: 0.50 }] }
+        ]
+      },
+      {
+        id: 'item-402',
+        name: 'The Mission Carne Asada Burrito',
+        description: 'Charbroiled flank steak, Mexican seasoned rice, pinto beans, fresh guacamole, pico de gallo, and crema in a giant warm flour tortilla.',
+        price: 14.50,
+        image: 'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=500&q=80',
+        category: 'Burritos & Bowls',
+        isPopular: true,
+        isVegetarian: false,
+        isSpicy: false,
+        calories: 820,
+        options: [
+          { name: 'Make it Wet / Enchilada Style', required: false, choices: [{ label: 'Regular Dry Foil Wrapped', price: 0 }, { label: 'Wet with Melted Cheese & Red Sauce', price: 2.25 }] }
+        ]
+      },
+      {
+        id: 'item-403',
+        name: 'Fresh Guacamole & Warm Corn Chips',
+        description: 'Made-to-order Hass avocado, chopped red onion, jalapeño, lime juice, and cilantro served with warm house tortilla chips.',
+        price: 7.99,
+        image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=500&q=80',
+        category: 'Sides & Drinks',
+        isPopular: false,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 410,
+        options: []
+      }
+    ]
+  },
+  {
+    id: 'rest-5',
+    name: 'Green Roots Superfood Bowls',
+    slug: 'green-roots-bowls',
+    cuisine: 'healthy',
+    cuisineTags: ['Organic Salads', 'Warm Grain Bowls', 'Smoothies'],
+    rating: 4.8,
+    reviewCount: 750,
+    deliveryTimeMinutes: '15 - 25',
+    deliveryFee: 1.99,
+    minOrder: 14.00,
+    priceRange: '$$',
+    featured: false,
+    isOpen: true,
+    address: '77 Wellness Way',
+    phone: '+1 (555) 654-3210',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80',
+    logo: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=150&q=80',
+    offer: 'Healthy Kick: 15% off',
+    description: '100% farm-fresh seasonal greens, warm ancient grains, clean proteins, and scratch-made dressings.',
+    categories: ['Popular', 'Warm Grain Bowls', 'Fresh Salads', 'Cold Pressed Juices'],
+    menu: [
+      {
+        id: 'item-501',
+        name: 'Avocado Green Harvest Bowl',
+        description: 'Organic warm quinoa, wild arugula, roasted sweet potato, creamy avocado, heirloom cherry tomatoes, pumpkin seeds, and green tahini dressing.',
+        price: 14.95,
+        image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&q=80',
+        category: 'Warm Grain Bowls',
+        isPopular: true,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 490,
+        options: [
+          { name: 'Add Protein', required: false, choices: [{ label: 'No Protein (Plant Based)', price: 0 }, { label: 'Grilled Herb Chicken Breast', price: 4.00 }, { label: 'Organic Baked Tofu', price: 3.00 }, { label: 'Wild Atlantic Salmon', price: 6.00 }] }
+        ]
+      },
+      {
+        id: 'item-502',
+        name: 'Antioxidant Berry Acai Bowl',
+        description: 'Organic wild Brazilian acai puree blended with bananas, topped with gluten-free granola, blueberries, strawberries, chia seeds, and raw honey drizzle.',
+        price: 11.50,
+        image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=500&q=80',
+        category: 'Fresh Salads',
+        isPopular: true,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 390,
+        options: [
+          { name: 'Boosters', required: false, multi: true, choices: [{ label: 'Almond Butter Drizzle', price: 1.50 }, { label: 'Hemp Protein Powder', price: 1.50 }, { label: 'Coconut Flakes', price: 0.75 }] }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'rest-6',
+    name: 'Bombay Spice & Clay Oven',
+    slug: 'bombay-spice-kitchen',
+    cuisine: 'indian',
+    cuisineTags: ['Mughlai Curries', 'Tandoori Grill', 'Garlic Naan'],
+    rating: 4.9,
+    reviewCount: 1850,
+    deliveryTimeMinutes: '30 - 45',
+    deliveryFee: 1.99,
+    minOrder: 18.00,
+    priceRange: '$$',
+    featured: true,
+    isOpen: true,
+    address: '64 Curry Corner St',
+    phone: '+1 (555) 876-5432',
+    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80',
+    logo: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=150&q=80',
+    offer: 'Free Butter Naan with any Curry',
+    description: 'Slow-simmered rich curries, aromatic basmati biryanis, and sizzling meats roasted in clay tandoor ovens.',
+    categories: ['Popular', 'Curries', 'Biryani & Rice', 'Tandoori & Breads'],
+    menu: [
+      {
+        id: 'item-601',
+        name: 'Creamy Butter Chicken (Murgh Makhani)',
+        description: 'Tender tandoor-smoked chicken breast simmered in a silky tomato, fenugreek, and creamy butter gravy.',
+        price: 18.50,
+        image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500&q=80',
+        category: 'Curries',
+        isPopular: true,
+        isVegetarian: false,
+        isSpicy: false,
+        calories: 680,
+        options: [
+          { name: 'Spice Level', required: true, choices: [{ label: 'Mild', price: 0 }, { label: 'Medium Authentic', price: 0 }, { label: 'Hot / Indian Spicy', price: 0 }] }
+        ]
+      },
+      {
+        id: 'item-602',
+        name: 'Paneer Tikka Masala',
+        description: 'Charred cubes of fresh paneer cheese cooked with bell peppers and onions in a spiced onion-tomato masala sauce.',
+        price: 16.95,
+        image: 'https://images.unsplash.com/photo-1567184109191-3783b3218ce7?w=500&q=80',
+        category: 'Curries',
+        isPopular: true,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 590,
+        options: [
+          { name: 'Spice Level', required: true, choices: [{ label: 'Mild', price: 0 }, { label: 'Medium', price: 0 }, { label: 'Spicy', price: 0 }] }
+        ]
+      },
+      {
+        id: 'item-603',
+        name: 'Fresh Garlic & Coriander Naan',
+        description: 'Fluffy clay oven leavened bread brushed with clarified ghee, crushed garlic, and cilantro.',
+        price: 4.50,
+        image: 'https://images.unsplash.com/photo-1626074353765-517a681e40be?w=500&q=80',
+        category: 'Tandoori & Breads',
+        isPopular: true,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 280,
+        options: []
+      }
+    ]
+  },
+  {
+    id: 'rest-7',
+    name: 'Sweet Tooth Dessert Lab & Gelato',
+    slug: 'sweet-tooth-dessert-lab',
+    cuisine: 'desserts',
+    cuisineTags: ['Gourmet Cookies', 'Waffles', 'Artisanal Gelato'],
+    rating: 4.8,
+    reviewCount: 1120,
+    deliveryTimeMinutes: '15 - 25',
+    deliveryFee: 0.99,
+    minOrder: 8.00,
+    priceRange: '$',
+    featured: false,
+    isOpen: true,
+    address: '98 Sugar Lane',
+    phone: '+1 (555) 345-6789',
+    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&q=80',
+    logo: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=150&q=80',
+    offer: 'Buy 2 Cookies, Get 1 Free',
+    description: 'Decadent warm molten lava cakes, gooey Belgian chocolate chunk cookies, and house-churned artisanal Italian gelato.',
+    categories: ['Popular', 'Warm Baked Goods', 'Gelato Pints', 'Shakes'],
+    menu: [
+      {
+        id: 'item-701',
+        name: 'Molten Belgian Chocolate Lava Cake',
+        description: 'Warm dark chocolate cake with an oozing liquid ganache center, served with Madagascan vanilla bean gelato on the side.',
+        price: 9.95,
+        image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&q=80',
+        category: 'Warm Baked Goods',
+        isPopular: true,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 520,
+        options: []
+      },
+      {
+        id: 'item-702',
+        name: 'NYC Style Giant Stuffed Cookie Box (4 pcs)',
+        description: 'Assorted 6oz thick cookies: Red Velvet Cream Cheese, Triple Choc Fudge, Biscoff Lotus, and Campfire Smores.',
+        price: 16.00,
+        image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=500&q=80',
+        category: 'Warm Baked Goods',
+        isPopular: true,
+        isVegetarian: true,
+        isSpicy: false,
+        calories: 950,
+        options: []
+      }
+    ]
+  }
+];
+
+export const initialPromos = [
+  { code: 'TASTY20', type: 'percent', value: 20, maxDiscount: 10, minOrder: 15, description: '20% off orders over $15 (Max $10)' },
+  { code: 'FREEDEL', type: 'free_delivery', value: 0, minOrder: 12, description: 'Free delivery on orders over $12' },
+  { code: 'BITE10', type: 'fixed', value: 10, minOrder: 30, description: '$10 off orders over $30' },
+  { code: 'UBER5', type: 'fixed', value: 5, minOrder: 20, description: '$5 off orders over $20' }
+];
