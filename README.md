@@ -1,4 +1,4 @@
-# QuickBite — Uber Eats Food Delivery Fullstack Platform 🍔🍕🍣
+# QuickBite — Food Delivery Fullstack Platform 🍔🍕🍣
 
 A complete, high-performance, fullstack food ordering and delivery e-commerce web platform inspired by Uber Eats and DoorDash.
 
